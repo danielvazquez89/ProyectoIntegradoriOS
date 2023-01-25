@@ -17,7 +17,7 @@ class UploadProductViewController: UIViewController,UIPickerViewDelegate,UIPicke
     @IBOutlet weak var frontImage: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
     
-    let arrayDatos = ["Switch","Playstation 5", "XBox", "Wii U","Spectrum","Atari"]
+    let arrayDatos = ["Switch","Playstation 5", "XBox", "Wii U","Spectrum","Atari","Amstrad"]
  
     
     var titleString: String!
