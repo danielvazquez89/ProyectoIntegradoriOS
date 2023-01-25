@@ -32,7 +32,7 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 //datos dummy
                 if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] == nil) {
                     miDiccionarioValoraciones["Genero"] = "Aventura"
-                    miDiccionarioValoraciones["IconoGenero"] = "adventureGameIcon"
+                    miDiccionarioValoraciones["IconoGenero"] = "adventureGameIcong"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
