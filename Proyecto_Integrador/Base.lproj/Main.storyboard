@@ -305,7 +305,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="miCeldaGenero" id="kaQ-JB-B2L" customClass="miCeldaTableViewCell1" customModule="Proyecto_Integrador" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="miCeldaGenero" id="kaQ-JB-B2L" customClass="miCeldaTableViewCellUpload" customModule="Proyecto_Integrador" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kaQ-JB-B2L" id="mng-aT-T84">
@@ -325,6 +325,10 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="miGenero" destination="WsJ-IH-KY6" id="s28-lm-dFe"/>
+                                    <outlet property="miIconoGenero" destination="5ND-OL-72T" id="UHh-q5-Lf6"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -393,10 +397,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5K-ts-rfd">
-                                <rect key="frame" x="150" y="706" width="94" height="35"/>
+                                <rect key="frame" x="158" y="706" width="79" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Upload +"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Upload"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Jog-ZJ-eIV"/>
