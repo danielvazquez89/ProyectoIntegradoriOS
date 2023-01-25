@@ -22,6 +22,8 @@ class UploadProductViewController: UIViewController,UIPickerViewDelegate,UIPicke
     
     var titleString: String!
     var select = "Aventuradss"
+    //filemanager
+    var datos = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,68 @@ class UploadProductViewController: UIViewController,UIPickerViewDelegate,UIPicke
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         select = arrayDatos[row]
     }
+    
+    //FileManager
+    func getDocumentPath() -> URL
+    {
+        return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first ?? URL(string: "")!
+    }
+    
+    func miRutaArchivo() -> URL
+    {
+        let miPath = getDocumentPath()
+        let miFicheroURL = miPath.appending(path: "Datos.json")
+        
+        //let miFicheroURL2 = miPath.appendingPathExtension("Datos.json")
+        
+        return miFicheroURL
+    }
+    
+    @IBAction func upload(_ sender: Any) {
+        print("hola")
+        let miTituloJuegoGuardar = gameTitle.text ?? "ay, lo siento cariño, no hay nah, pa tu **** casa"
+        
+        let miFileManager = FileManager.default
+        
+        leerDatos()
+        
+        datos.append(miTituloJuegoGuardar)
+        
+        leerDatos()
+        
+        guardarDatos(datos: datos)
+    }
+    
+    func guardarDatos(datos: [String])
+    {
+        do
+        {
+            print("hola")
+            let misDatosSerializados = try JSONSerialization.data(withJSONObject: datos)
+            
+            try misDatosSerializados.write(to: miRutaArchivo())
+        }
+        catch _ {
+            print("Mira cariño... deja de intentarlo. ERROR FATAL DE ESCRITURA. SIN DATOS")
+        }
+    }
+    
+    
+    
+    func leerDatos()
+    {
+        do
+        {
+            let misDatosLeidos = try Data(contentsOf: miRutaArchivo())
+            
+            datos = try JSONSerialization.jsonObject(with: misDatosLeidos) as! [String] ?? []
+        }
+        catch _ {
+            print("Mira cariña: ERES UN INUTIL!!! ERROR FATAL DE LECUTRA SIN DATOS")
+        }
+       // return datos
+    }
+    
     
     @IBAction func slidervalue(_ sender: Any) {
         priceLabel.text = "\(Int(priceSlider.value))" + " €"
