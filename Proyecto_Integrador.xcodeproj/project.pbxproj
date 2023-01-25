@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A5114902979CBA00082515D /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51148F2979CBA00082515D /* Search.swift */; };
 		1A511492297A950C0082515D /* VideogameInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A511491297A950C0082515D /* VideogameInformation.swift */; };
-		1A8E0609297A9BB400FB7A88 /* TableViewControllerCategorias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8E0607297A9BB400FB7A88 /* TableViewControllerCategorias.swift */; };
-		1A8E060A297A9BB400FB7A88 /* UploadProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8E0608297A9BB400FB7A88 /* UploadProductViewController.swift */; };
+		1A681E3729812F2300E92C9E /* UploadProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A681E3629812F2300E92C9E /* UploadProductViewController.swift */; };
 		1AB88A45297944BC0052E202 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB88A44297944BC0052E202 /* Home.swift */; };
 		1ABA39DD297007C900F9E63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA39DC297007C900F9E63A /* AppDelegate.swift */; };
 		1ABA39DF297007C900F9E63A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA39DE297007C900F9E63A /* SceneDelegate.swift */; };
@@ -23,8 +22,7 @@
 /* Begin PBXFileReference section */
 		1A51148F2979CBA00082515D /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		1A511491297A950C0082515D /* VideogameInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideogameInformation.swift; sourceTree = "<group>"; };
-		1A8E0607297A9BB400FB7A88 /* TableViewControllerCategorias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewControllerCategorias.swift; path = ../../../../Downloads/TableViewControllerCategorias.swift; sourceTree = "<group>"; };
-		1A8E0608297A9BB400FB7A88 /* UploadProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadProductViewController.swift; path = ../../../../Downloads/UploadProductViewController.swift; sourceTree = "<group>"; };
+		1A681E3629812F2300E92C9E /* UploadProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UploadProductViewController.swift; path = ../../../../Downloads/UploadProductViewController.swift; sourceTree = "<group>"; };
 		1AB88A44297944BC0052E202 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		1ABA39D9297007C900F9E63A /* Proyecto_Integrador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proyecto_Integrador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABA39DC297007C900F9E63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +74,8 @@
 				1ABA39EA297007CA00F9E63A /* Info.plist */,
 				1ABA39DC297007C900F9E63A /* AppDelegate.swift */,
 				1AB88A44297944BC0052E202 /* Home.swift */,
+				1A681E3629812F2300E92C9E /* UploadProductViewController.swift */,
 				1A51148F2979CBA00082515D /* Search.swift */,
-				1A8E0607297A9BB400FB7A88 /* TableViewControllerCategorias.swift */,
-				1A8E0608297A9BB400FB7A88 /* UploadProductViewController.swift */,
 			);
 			path = Proyecto_Integrador;
 			sourceTree = "<group>";
@@ -161,10 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A8E0609297A9BB400FB7A88 /* TableViewControllerCategorias.swift in Sources */,
 				1A511492297A950C0082515D /* VideogameInformation.swift in Sources */,
+				1A681E3729812F2300E92C9E /* UploadProductViewController.swift in Sources */,
 				1ABA39E1297007C900F9E63A /* ViewController.swift in Sources */,
-				1A8E060A297A9BB400FB7A88 /* UploadProductViewController.swift in Sources */,
 				1ABA39DD297007C900F9E63A /* AppDelegate.swift in Sources */,
 				1A5114902979CBA00082515D /* Search.swift in Sources */,
 				1AB88A45297944BC0052E202 /* Home.swift in Sources */,
