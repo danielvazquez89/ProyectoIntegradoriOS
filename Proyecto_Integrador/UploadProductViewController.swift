@@ -78,7 +78,7 @@ class UploadProductViewController: UIViewController,UIPickerViewDelegate,UIPicke
         
         datos.append(miTituloJuegoGuardar)
         
-        leerDatos()
+       // leerDatos()
         
         guardarDatos(datos: datos)
     }
@@ -87,7 +87,6 @@ class UploadProductViewController: UIViewController,UIPickerViewDelegate,UIPicke
     {
         do
         {
-            print("hola")
             let misDatosSerializados = try JSONSerialization.data(withJSONObject: datos)
             
             try misDatosSerializados.write(to: miRutaArchivo())

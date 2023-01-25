@@ -57,6 +57,20 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
     private func setupData() {
         data.append("Last of Us")
         data.append("Ramiro")
+        data.append("Bayonneta")
+        data.append("Hamtaro")
+        data.append("My Cocking Mama")
+        data.append("Call of Duty")
+        data.append("Mas Effect")
+        data.append("Final Fantasy XIV")
+        data.append("Candy Crush")
+        data.append("Ponpeya")
+        data.append("Gran Theft Auto")
+        data.append("Age of Empires")
+        data.append("Battlefield")
+        data.append("Avatar")
+        data.append("Robocob")
+        data.append("Nintendogs")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
