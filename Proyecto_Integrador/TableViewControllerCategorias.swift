@@ -1,8 +1,9 @@
 //
 //  TableViewControllerCategorias.swift
-//  ProyectoIntegradoriOS
+//  Proyecto_Integrador
 //
-//  Created by Daniel Vázquez Pérez on 12/1/23.
+//  Created by Habieru Senso on 12/1/23.
+//
 //
 
 import UIKit
@@ -77,11 +78,11 @@ class TableViewControllerCategorias: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            let miCelda = tableView.dequeueReusableCell(withIdentifier: "celdaGenero", for: indexPath as IndexPath) as? miCeldaTableViewCell
+            let miCelda = tableView.dequeueReusableCell(withIdentifier: "miCeldaGenero", for: indexPath as IndexPath) as? miCeldaTableViewCellUpload
             //cell.textLabel!.text = "\(nota[indexPath.row])"
        // var miCelda = miCeldaTableViewCell()
         let miDiccionario = miArrayValoraciones[indexPath.row]
-        miCelda?.miGenero.text = miDiccionario["Genero"]
+        miCelda?.miGenero.text = miDiccionario["Genero"] 
         miCelda?.miIconoGenero.image = UIImage(named: miDiccionario["IconoGenero"]!)
         return miCelda!
         }
@@ -115,14 +116,14 @@ class TableViewControllerCategorias: UITableViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: "UploadProductViewController") as! UploadProductViewController
         let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!)! as! miCeldaTableViewCell
+        let currentCell = tableView.cellForRow(at: indexPath!)! as! miCeldaTableViewCellUpload
 
         destination.titleString = currentCell.miGenero.text
         navigationController?.pushViewController(destination, animated: true)
     }
     
 }
-    class miCeldaTableViewCell: UITableViewCell {
+    class miCeldaTableViewCellUpload: UITableViewCell {
         
         @IBOutlet weak var miIconoGenero: UIImageView!
         @IBOutlet weak var miGenero: UILabel!
