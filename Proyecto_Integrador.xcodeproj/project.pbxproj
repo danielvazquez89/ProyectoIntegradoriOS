@@ -28,6 +28,8 @@
 		1ABA39E4297007C900F9E63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA39E2297007C900F9E63A /* Main.storyboard */; };
 		1ABA39E6297007CA00F9E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA39E5297007CA00F9E63A /* Assets.xcassets */; };
 		1ABA39E9297007CA00F9E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABA39E7297007CA00F9E63A /* LaunchScreen.storyboard */; };
+		1AE381ED29996EE900990A29 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE381EC29996EE900990A29 /* Login.swift */; };
+		1AE381EF29996EF500990A29 /* Registrarse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE381EE29996EF500990A29 /* Registrarse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		1ABA39E5297007CA00F9E63A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ABA39E8297007CA00F9E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1ABA39EA297007CA00F9E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AE381EC29996EE900990A29 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		1AE381EE29996EF500990A29 /* Registrarse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registrarse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				1A5CF60F299957A800154E65 /* TuCartera.swift */,
 				1A5CF611299957B400154E65 /* Ajustes.swift */,
 				1A5CF613299957BF00154E65 /* Ayuda.swift */,
+				1AE381EC29996EE900990A29 /* Login.swift */,
+				1AE381EE29996EF500990A29 /* Registrarse.swift */,
 			);
 			path = Proyecto_Integrador;
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 				1A511492297A950C0082515D /* VideogameInformation.swift in Sources */,
 				1A681E3D2981310100E92C9E /* UploadProductViewController.swift in Sources */,
 				1A5CF614299957BF00154E65 /* Ayuda.swift in Sources */,
+				1AE381EF29996EF500990A29 /* Registrarse.swift in Sources */,
 				1A5CF60E2999579900154E65 /* TusVentas.swift in Sources */,
 				1A1B0ECD2993BF9000E5786C /* FavoritesController.swift in Sources */,
 				1A66ADB829992CEB004DB643 /* ShowGameInfoByGenre.swift in Sources */,
@@ -204,6 +211,7 @@
 				1A66ADBA29993E19004DB643 /* YourFavoriteUsers.swift in Sources */,
 				1A5CF612299957B400154E65 /* Ajustes.swift in Sources */,
 				1AB88A45297944BC0052E202 /* Home.swift in Sources */,
+				1AE381ED29996EE900990A29 /* Login.swift in Sources */,
 				1A66ADBC29993F49004DB643 /* showUserInfo.swift in Sources */,
 				1A66ADB429992C2B004DB643 /* ShowGamesByGenre.swift in Sources */,
 				1ABA39DF297007C900F9E63A /* SceneDelegate.swift in Sources */,
