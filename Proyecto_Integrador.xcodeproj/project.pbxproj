@@ -7,8 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1B0ECD2993BF9000E5786C /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1B0ECC2993BF9000E5786C /* FavoritesController.swift */; };
 		1A5114902979CBA00082515D /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A51148F2979CBA00082515D /* Search.swift */; };
 		1A511492297A950C0082515D /* VideogameInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A511491297A950C0082515D /* VideogameInformation.swift */; };
+		1A5CF60C2999578B00154E65 /* TusCompras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CF60B2999578B00154E65 /* TusCompras.swift */; };
+		1A5CF60E2999579900154E65 /* TusVentas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CF60D2999579900154E65 /* TusVentas.swift */; };
+		1A5CF610299957A800154E65 /* TuCartera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CF60F299957A800154E65 /* TuCartera.swift */; };
+		1A5CF612299957B400154E65 /* Ajustes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CF611299957B400154E65 /* Ajustes.swift */; };
+		1A5CF614299957BF00154E65 /* Ayuda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5CF613299957BF00154E65 /* Ayuda.swift */; };
+		1A66ADB429992C2B004DB643 /* ShowGamesByGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A66ADB329992C2B004DB643 /* ShowGamesByGenre.swift */; };
+		1A66ADB829992CEB004DB643 /* ShowGameInfoByGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A66ADB729992CEB004DB643 /* ShowGameInfoByGenre.swift */; };
+		1A66ADBA29993E19004DB643 /* YourFavoriteUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A66ADB929993E19004DB643 /* YourFavoriteUsers.swift */; };
+		1A66ADBC29993F49004DB643 /* showUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A66ADBB29993F49004DB643 /* showUserInfo.swift */; };
 		1A681E3D2981310100E92C9E /* UploadProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A681E3C2981310000E92C9E /* UploadProductViewController.swift */; };
 		1A681E3F298131B400E92C9E /* TableViewControllerCategorias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A681E3E298131B400E92C9E /* TableViewControllerCategorias.swift */; };
 		1AB88A45297944BC0052E202 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB88A44297944BC0052E202 /* Home.swift */; };
@@ -21,8 +31,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A1B0ECC2993BF9000E5786C /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		1A51148F2979CBA00082515D /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		1A511491297A950C0082515D /* VideogameInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideogameInformation.swift; sourceTree = "<group>"; };
+		1A5CF60B2999578B00154E65 /* TusCompras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TusCompras.swift; sourceTree = "<group>"; };
+		1A5CF60D2999579900154E65 /* TusVentas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TusVentas.swift; sourceTree = "<group>"; };
+		1A5CF60F299957A800154E65 /* TuCartera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuCartera.swift; sourceTree = "<group>"; };
+		1A5CF611299957B400154E65 /* Ajustes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ajustes.swift; sourceTree = "<group>"; };
+		1A5CF613299957BF00154E65 /* Ayuda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ayuda.swift; sourceTree = "<group>"; };
+		1A66ADB329992C2B004DB643 /* ShowGamesByGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGamesByGenre.swift; sourceTree = "<group>"; };
+		1A66ADB729992CEB004DB643 /* ShowGameInfoByGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGameInfoByGenre.swift; sourceTree = "<group>"; };
+		1A66ADB929993E19004DB643 /* YourFavoriteUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourFavoriteUsers.swift; sourceTree = "<group>"; };
+		1A66ADBB29993F49004DB643 /* showUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = showUserInfo.swift; sourceTree = "<group>"; };
 		1A681E3C2981310000E92C9E /* UploadProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadProductViewController.swift; sourceTree = "<group>"; };
 		1A681E3E298131B400E92C9E /* TableViewControllerCategorias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerCategorias.swift; sourceTree = "<group>"; };
 		1AB88A44297944BC0052E202 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -79,6 +99,16 @@
 				1ABA39DC297007C900F9E63A /* AppDelegate.swift */,
 				1AB88A44297944BC0052E202 /* Home.swift */,
 				1A51148F2979CBA00082515D /* Search.swift */,
+				1A1B0ECC2993BF9000E5786C /* FavoritesController.swift */,
+				1A66ADB329992C2B004DB643 /* ShowGamesByGenre.swift */,
+				1A66ADB729992CEB004DB643 /* ShowGameInfoByGenre.swift */,
+				1A66ADB929993E19004DB643 /* YourFavoriteUsers.swift */,
+				1A66ADBB29993F49004DB643 /* showUserInfo.swift */,
+				1A5CF60B2999578B00154E65 /* TusCompras.swift */,
+				1A5CF60D2999579900154E65 /* TusVentas.swift */,
+				1A5CF60F299957A800154E65 /* TuCartera.swift */,
+				1A5CF611299957B400154E65 /* Ajustes.swift */,
+				1A5CF613299957BF00154E65 /* Ayuda.swift */,
 			);
 			path = Proyecto_Integrador;
 			sourceTree = "<group>";
@@ -163,11 +193,21 @@
 			files = (
 				1A511492297A950C0082515D /* VideogameInformation.swift in Sources */,
 				1A681E3D2981310100E92C9E /* UploadProductViewController.swift in Sources */,
+				1A5CF614299957BF00154E65 /* Ayuda.swift in Sources */,
+				1A5CF60E2999579900154E65 /* TusVentas.swift in Sources */,
+				1A1B0ECD2993BF9000E5786C /* FavoritesController.swift in Sources */,
+				1A66ADB829992CEB004DB643 /* ShowGameInfoByGenre.swift in Sources */,
+				1A5CF610299957A800154E65 /* TuCartera.swift in Sources */,
 				1ABA39E1297007C900F9E63A /* ViewController.swift in Sources */,
 				1ABA39DD297007C900F9E63A /* AppDelegate.swift in Sources */,
 				1A5114902979CBA00082515D /* Search.swift in Sources */,
+				1A66ADBA29993E19004DB643 /* YourFavoriteUsers.swift in Sources */,
+				1A5CF612299957B400154E65 /* Ajustes.swift in Sources */,
 				1AB88A45297944BC0052E202 /* Home.swift in Sources */,
+				1A66ADBC29993F49004DB643 /* showUserInfo.swift in Sources */,
+				1A66ADB429992C2B004DB643 /* ShowGamesByGenre.swift in Sources */,
 				1ABA39DF297007C900F9E63A /* SceneDelegate.swift in Sources */,
+				1A5CF60C2999578B00154E65 /* TusCompras.swift in Sources */,
 				1A681E3F298131B400E92C9E /* TableViewControllerCategorias.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

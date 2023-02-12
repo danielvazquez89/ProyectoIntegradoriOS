@@ -1,13 +1,13 @@
 //
-//  Search.swift
+//  ShowGamesByGenre.swift
 //  Proyecto_Integrador
 //
-//  Created by Habieru Senso on 19/1/23.
+//  Created by Habieru Senso on 12/2/23.
 //
 
 import UIKit
 
-class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UITextFieldDelegate {
+class ShowGamesByGenre: UIViewController,UITableViewDelegate,UITableViewDataSource, UITextFieldDelegate {
     
     
     @IBOutlet weak var distanceFromYou: UISlider!
@@ -80,7 +80,7 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath) as! searchCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCellByGenre", for: indexPath) as! searchCellByGenre
         
         if !filteredData.isEmpty {
             cell.miGenero?.text = filteredData[indexPath.row]
@@ -95,9 +95,9 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let destination = storyboard.instantiateViewController(withIdentifier: "ShowProductViewController") as! VideogameInformation
+        let destination = storyboard.instantiateViewController(withIdentifier: "ShowProductInfoByGenreViewController") as! ShowGameInfoByGenre
         let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!)! as! searchCell
+        let currentCell = tableView.cellForRow(at: indexPath!)! as! searchCellByGenre
 
         destination.titleString = currentCell.miGenero.text
         navigationController?.pushViewController(destination, animated: true)
@@ -108,7 +108,7 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
     }
 }
 
-class searchCell: UITableViewCell {
+class searchCellByGenre: UITableViewCell {
     
     @IBOutlet weak var miGenero: UILabel!
     override func awakeFromNib() {

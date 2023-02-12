@@ -1,14 +1,14 @@
 //
-//  Home.swift
+//  TusCompras.swift
 //  Proyecto_Integrador
 //
-//  Created by Habieru Senso on 19/1/23.
+//  Created by Habieru Senso on 12/2/23.
 //
 
 import UIKit
 
-class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
- 
+class TusCompras: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -31,35 +31,21 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let defaults = UserDefaults.standard
                 //datos dummy
                 if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] == nil) {
-                    miDiccionarioValoraciones["Genero"] = "Aventura"
-                    miDiccionarioValoraciones["IconoGenero"] = "adventureGameIcong"
+                    miDiccionarioValoraciones["Genero"] = "Last of us"
+                    miDiccionarioValoraciones["IconoGenero"] = "lastofus"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
-                    miDiccionarioValoraciones["Genero"] = "Acción"
-                    miDiccionarioValoraciones["IconoGenero"] = "actionGameIcon"
+                    miDiccionarioValoraciones["Genero"] = "Mortadelo"
+                    miDiccionarioValoraciones["IconoGenero"] = "Mortadelo"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
-                    miDiccionarioValoraciones["Genero"] = "Arcade"
-                    miDiccionarioValoraciones["IconoGenero"] = "arcadeGameIcon"
+                    miDiccionarioValoraciones["Genero"] = "Nintendogs"
+                    miDiccionarioValoraciones["IconoGenero"] = "Nintendogs"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
-                    miDiccionarioValoraciones["Genero"] = "Deportes"
-                    miDiccionarioValoraciones["IconoGenero"] = "sportsGameIcon"
-                    
-                    miArrayValoraciones.append(miDiccionarioValoraciones)
-                    
-                    miDiccionarioValoraciones["Genero"] = "Estrategia"
-                    miDiccionarioValoraciones["IconoGenero"] = "strategyGameIcon"
-                    
-                    miArrayValoraciones.append(miDiccionarioValoraciones)
-                    
-                    miDiccionarioValoraciones["Genero"] = "Juegos de mesa"
-                    miDiccionarioValoraciones["IconoGenero"] = "boargameGameIcon"
-                    
-                    miArrayValoraciones.append(miDiccionarioValoraciones)
                 }
         
     }
@@ -76,7 +62,7 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-                let miCelda = tableView.dequeueReusableCell(withIdentifier: "celdaGenero", for: indexPath as IndexPath) as? miCeldaTableViewCell
+                let miCelda = tableView.dequeueReusableCell(withIdentifier: "miCeldaComprasTableViewCell", for: indexPath as IndexPath) as? miCeldaComprasTableViewCell
                 //cell.textLabel!.text = "\(nota[indexPath.row])"
            // var miCelda = miCeldaTableViewCell()
             let miDiccionario = miArrayValoraciones[indexPath.row]
@@ -91,20 +77,11 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //select
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let destination = storyboard.instantiateViewController(withIdentifier: "ShowProductByGenreViewController") as! ShowGamesByGenre
-        let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!)! as! miCeldaTableViewCell
-
-        navigationController?.pushViewController(destination, animated: true)
-    }
-    
     //fin select
     
 }
 
-class miCeldaTableViewCell: UITableViewCell {
+class miCeldaComprasTableViewCell: UITableViewCell {
         
   
     @IBOutlet weak var miGenero: UILabel!
