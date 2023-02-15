@@ -11,7 +11,7 @@
         <!--Home-->
         <scene sceneID="fkZ-dc-AAF">
             <objects>
-                <viewController id="c8v-hj-fJW" customClass="Home" customModule="Proyecto_Integrador" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeController" id="c8v-hj-fJW" customClass="Home" customModule="Proyecto_Integrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nSg-gS-AJA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +33,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celdaGenero" rowHeight="107" id="aax-fg-2fS" customClass="miCeldaTableViewCell" customModule="Proyecto_Integrador" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="celdaGenero" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celdaGenero" rowHeight="107" id="aax-fg-2fS" customClass="miCeldaTableViewCell" customModule="Proyecto_Integrador" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="327" height="107"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aax-fg-2fS" id="7qq-KY-jcU">
@@ -45,7 +45,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cV9-2S-cgX">
-                                                    <rect key="frame" x="148" y="43" width="159" height="21"/>
+                                                    <rect key="frame" x="148" y="31" width="159" height="33"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -55,7 +55,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="miGenero" destination="cV9-2S-cgX" id="kv7-CF-zhR"/>
-                                            <outlet property="miGeneroImagen" destination="gCG-Ho-kUF" id="CGj-gL-qax"/>
+                                            <outlet property="miGeneroImagen" destination="gCG-Ho-kUF" id="Yvx-bF-Rfh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -293,7 +293,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Acceder"/>
                                 <connections>
-                                    <segue destination="kB2-RI-rfp" kind="show" id="A3t-7D-GU4"/>
+                                    <action selector="btnToMenu:" destination="hgK-PP-B5e" eventType="touchUpInside" id="Vm4-kW-yps"/>
+                                    <segue destination="kB2-RI-rfp" kind="show" id="oKV-kX-w9x"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Si no tienes cuenta " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMw-jO-Gxe">
@@ -317,6 +318,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="jjw-eZ-yro"/>
+                    <connections>
+                        <outlet property="tfContraseña" destination="EOI-kL-0Lz" id="keY-kY-ZNQ"/>
+                        <outlet property="tfUsuario" destination="yFK-rc-NcP" id="tUn-9a-A5W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYz-MI-qW3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,8 +349,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nueva contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdc-Nm-IYC">
-                                <rect key="frame" x="38" y="266" width="138" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contraseña" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdc-Nm-IYC">
+                                <rect key="frame" x="38" y="266" width="88" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -421,7 +426,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Guardar"/>
                                 <connections>
-                                    <segue destination="hgK-PP-B5e" kind="show" id="1fj-Cm-8hd"/>
+                                    <action selector="DarAltaUsuario:" destination="VZ9-Ap-SKs" eventType="touchUpInside" id="O7t-Mn-XQD"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cumpleaños" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktg-Bq-vLP">
@@ -443,23 +448,40 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Volver atras"/>
                                 <connections>
-                                    <segue destination="hgK-PP-B5e" kind="show" id="YAP-UV-PGP"/>
+                                    <segue destination="hgK-PP-B5e" kind="show" id="bOx-2S-0r2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tienes que rellenar los datos bien" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymZ-Nd-Raj">
+                                <rect key="frame" x="58" y="729" width="255" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TFL-6M-XR4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="4Ty-3g-wnN"/>
+                    <connections>
+                        <outlet property="registroAltera" destination="ymZ-Nd-Raj" id="44g-fQ-1dH"/>
+                        <outlet property="registroCP" destination="ewM-yd-sN6" id="B9V-ea-B4v"/>
+                        <outlet property="registroCiudad" destination="MtZ-Ym-nia" id="HiK-SI-sDr"/>
+                        <outlet property="registroContraena" destination="n5y-NZ-Xae" id="9iV-wv-kvP"/>
+                        <outlet property="registroCumpleanos" destination="jbT-FT-5E3" id="MIZ-YV-yFJ"/>
+                        <outlet property="registroDireccion" destination="WE7-7f-Fid" id="dj5-JI-EGx"/>
+                        <outlet property="registroMail" destination="2y9-qQ-xkU" id="s06-JA-ReY"/>
+                        <outlet property="registrosegundaContrasena" destination="A51-9s-V8j" id="EYE-1E-V32"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44N-RD-Ksx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2385.4961832061067" y="2440.8450704225352"/>
+            <point key="canvasLocation" x="-4138" y="1976"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ynE-Vf-i4o">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="kB2-RI-rfp" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="beginingOfEverything" modalPresentationStyle="fullScreen" id="kB2-RI-rfp" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="skK-YR-QuB"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tPD-T2-8pB">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -625,7 +647,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlT-xe-kzM">
-                                <rect key="frame" x="115" y="501" width="255" height="162"/>
+                                <rect key="frame" x="110" y="501" width="256" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="is4-Zt-YX5" id="RPX-7L-Qaz"/>
@@ -1805,9 +1827,6 @@
             <point key="canvasLocation" x="3322.9007633587785" y="3366.9014084507044"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="1fj-Cm-8hd"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Pepe_45" width="172" height="210"/>
         <image name="bitcoinsign.square.fill" catalog="system" width="128" height="114"/>
@@ -1828,6 +1847,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

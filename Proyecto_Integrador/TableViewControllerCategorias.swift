@@ -13,6 +13,8 @@ class TableViewControllerCategorias: UITableViewController {
     var miDiccionarioValoraciones = [String:String]()
     var miArrayValoraciones = [[String:String]]()
     
+    var misDatosDecodificados:[Generos]=[]
+    
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] != nil) {
@@ -27,7 +29,9 @@ class TableViewControllerCategorias: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
+        loadDataFromRemote()
         //datos dummy
+        /*
         if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] == nil) {
             miDiccionarioValoraciones["Genero"] = "Aventura"
             miDiccionarioValoraciones["IconoGenero"] = "adventureGameIcon"
@@ -59,6 +63,7 @@ class TableViewControllerCategorias: UITableViewController {
             
             miArrayValoraciones.append(miDiccionarioValoraciones)
         }
+         */
     }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -75,7 +80,7 @@ class TableViewControllerCategorias: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return miArrayValoraciones.count
+        return misDatosDecodificados.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,9 +88,11 @@ class TableViewControllerCategorias: UITableViewController {
             let miCelda = tableView.dequeueReusableCell(withIdentifier: "miCeldaGenero", for: indexPath as IndexPath) as? miCeldaTableViewCellUpload
             //cell.textLabel!.text = "\(nota[indexPath.row])"
        // var miCelda = miCeldaTableViewCell()
-        let miDiccionario = miArrayValoraciones[indexPath.row]
-        miCelda?.miGenero.text = miDiccionario["Genero"] 
-        miCelda?.miIconoGenero.image = UIImage(named: miDiccionario["IconoGenero"]!)
+        
+        miCelda?.miGenero.text = misDatosDecodificados[indexPath.row].tipo_genero
+        let url = URL(string: misDatosDecodificados[indexPath.row].url_imagen)
+         let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+        miCelda?.miIconoGenero?.image = UIImage(data: data!)
         return miCelda!
         }
     
@@ -123,6 +130,33 @@ class TableViewControllerCategorias: UITableViewController {
         destination.titleString = currentCell.miGenero.text
         navigationController?.pushViewController(destination, animated: true)
     }
+    
+    func loadDataFromRemote()
+    {
+        //accedemos a un JSON remoto
+        guard let miUrl = URL(string: "http://localhost:8080/generos/") else
+        {
+            print("No se encuentra el archivo JSON Remoto")
+            return
+        }
+        
+        decodeJSON(url: miUrl)
+    }
+    
+    func decodeJSON(url: URL)
+    {
+        do{
+            let miDecodificador = JSONDecoder()
+            let misDatos = try Data(contentsOf: url)
+            self.misDatosDecodificados = try miDecodificador.decode([Generos].self, from: misDatos)
+            print("decodificado ")
+        }
+        catch
+        {
+            print("Error al decodificar... INUTIL")
+        }
+    }
+    
     
 }
     class miCeldaTableViewCellUpload: UITableViewCell {

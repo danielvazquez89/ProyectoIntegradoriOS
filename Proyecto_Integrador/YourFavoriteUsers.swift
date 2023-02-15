@@ -14,6 +14,9 @@ class YourFavoriteUsers: UIViewController, UITableViewDataSource, UITableViewDel
     @IBOutlet weak var tableView: UITableView!
     var miDiccionarioValoraciones = [String:String]()
         var miArrayValoraciones = [[String:String]]()
+    
+    var misDatosDecodificados:[Author]=[]
+    
         override func viewWillAppear(_ animated: Bool) {
             let defaults = UserDefaults.standard
             if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] != nil) {
@@ -26,27 +29,7 @@ class YourFavoriteUsers: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
-        
-        let defaults = UserDefaults.standard
-                //datos dummy
-                if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] == nil) {
-                    miDiccionarioValoraciones["Usuario"] = "Pepe_45"
-                    miDiccionarioValoraciones["IconoUsuario"] = "Pepe_45"
-                    
-                    miArrayValoraciones.append(miDiccionarioValoraciones)
-                    
-                    miDiccionarioValoraciones["Usuario"] = "El_roblox"
-                    miDiccionarioValoraciones["IconoUsuario"] = "El_roblox"
-                    
-                    miArrayValoraciones.append(miDiccionarioValoraciones)
-                    
-                    miDiccionarioValoraciones["Usuario"] = "face_ip"
-                    miDiccionarioValoraciones["IconoUsuario"] = "face_ip"
-                    
-                    miArrayValoraciones.append(miDiccionarioValoraciones)
-                    
-                }
+        loadDataFromRemote()
         
     }
     
@@ -57,18 +40,16 @@ class YourFavoriteUsers: UIViewController, UITableViewDataSource, UITableViewDel
 
          func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             // #warning Incomplete implementation, return the number of rows
-            return miArrayValoraciones.count
+            return misDatosDecodificados.count
         }
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-                let miCelda = tableView.dequeueReusableCell(withIdentifier: "celdaUsuarioFavorito", for: indexPath as IndexPath) as? miCeldaUsuarioTableViewCell
-                //cell.textLabel!.text = "\(nota[indexPath.row])"
-           // var miCelda = miCeldaTableViewCell()
-            let miDiccionario = miArrayValoraciones[indexPath.row]
-            miCelda?.miUsuarioFavorito.text = miDiccionario["Usuario"]
-            miCelda?.miUsuarioFavoritoImagen.image = UIImage(named:  miDiccionario["IconoUsuario"]!)
-            return miCelda!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "celdaUsuarioFavorito", for: indexPath as IndexPath) as? miCeldaUsuarioTableViewCell
+            
+            cell?.miUsuarioFavorito?.text = misDatosDecodificados[indexPath.row].nombre
+            
+            return cell!
             }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -86,7 +67,34 @@ class YourFavoriteUsers: UIViewController, UITableViewDataSource, UITableViewDel
         navigationController?.pushViewController(destination, animated: true)
     }
     
-    //fin select
+    //fin select func loadDataFromRemote()
+    func loadDataFromRemote()
+    {
+        //accedemos a un JSON remoto
+        guard let miUrl = URL(string: "http://localhost:8080/users/") else
+        {
+            print("No se encuentra el archivo JSON Remoto")
+            return
+        }
+        
+        decodeJSON(url: miUrl)
+    }
+    
+    func decodeJSON(url: URL)
+    {
+        do{
+            let miDecodificador = JSONDecoder()
+            let misDatos = try Data(contentsOf: url)
+            self.misDatosDecodificados = try miDecodificador.decode([Author].self, from: misDatos)
+            print("decodificado ")
+        }
+        catch
+        {
+            print("Error al decodificar... INUTIL")
+        }
+    }
+    
+    
     
 }
 

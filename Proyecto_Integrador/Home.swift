@@ -91,17 +91,17 @@ class Home: UIViewController, UITableViewDataSource, UITableViewDelegate {
          */
             //añadir
             
-            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "celdaGenero")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "celdaGenero", for: indexPath as IndexPath) as? miCeldaTableViewCell
             
-            cell.textLabel?.text = misDatosDecodificados[indexPath.row].tipo_genero
+            cell?.miGenero?.text = misDatosDecodificados[indexPath.row].tipo_genero
             
-          /*  let url = URL(string: misDatosDecodificados[indexPath.row].url_imagen)
+           let url = URL(string: misDatosDecodificados[indexPath.row].url_imagen)
             let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            cell = UIImage(data: data!)
+            cell?.miGeneroImagen?.image = UIImage(data: data!)
             
-            */
+        
             
-            return cell
+            return cell!
             }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

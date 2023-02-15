@@ -25,6 +25,8 @@ class UploadProductViewController: UIViewController,UIPickerViewDelegate,UIPicke
     //filemanager
     var datos = [String]()
     
+    var misDatosDecodificados:[TodosJuegos]=[]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         priceLabel.text = "1 €"
@@ -127,6 +129,43 @@ class UploadProductViewController: UIViewController,UIPickerViewDelegate,UIPicke
     }
     */
 
+    func codeJSON (dataToCode:[TodosJuegos]) -> Data
+    {
+        let miCodificador = JSONEncoder()
+        if let jsonCodificado = try? miCodificador.encode(dataToCode)
+        {
+            if let cadenaJSON = String(data: jsonCodificado, encoding: .utf8)
+            {
+                //print(cadenaJSON)
+                return jsonCodificado
+            }
+        }
+        return Data()
+       // if let jsonCodificado = String(data: miCodificador, encoding: String.Encoding)
+    }
     
+    //esto de abajo no sirve para ontener los datos, es para publicar
+
+    func postAPI()
+    {
+        //creamos la llamada a la peticion POST
+        let miUrl = URL(string: "http://localhost:8080/juegos/")! //<- hay una exclamacion.... aqui
+        var miRequest = URLRequest(url: miUrl)
+        
+        //parametrizamos la peticion
+        miRequest.httpMethod = "POST" //GET, POST, PUT ....
+        miRequest.httpBody = codeJSON(dataToCode: misDatosDecodificados)
+        
+        let miTarea = URLSession.shared.dataTask(with: miRequest) {
+            data, response, error in
+            guard let data = data, error == nil else
+            {
+                print("Error en la llamada, sin datos")
+                return
+            }
+            print("Respuesta: \(response)")
+        }
+        miTarea.resume()
+    }
     
 }

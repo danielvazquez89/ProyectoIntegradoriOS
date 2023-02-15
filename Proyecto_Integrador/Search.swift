@@ -28,7 +28,7 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
         distanceFromYou.minimumValue = 1
         distanceFromYou.maximumValue = 50
         
-        setupData()
+     //   setupData()
         table.delegate = self
         table.dataSource = self
         field.delegate  = self
@@ -56,6 +56,7 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
         filtered = true
     }
     
+    /*
     private func setupData() {
         data.append("Last of Us")
         data.append("Ramiro")
@@ -74,6 +75,7 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
         data.append("Robocob")
         data.append("Nintendogs")
     }
+     */
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if !filteredData.isEmpty {

@@ -9,11 +9,22 @@ import UIKit
 
 class Registrarse: UIViewController {
 
+    
+    @IBOutlet weak var registroMail: UITextField!
+    @IBOutlet weak var registroContraena: UITextField!
+    @IBOutlet weak var registrosegundaContrasena: UITextField!
+    @IBOutlet weak var registroDireccion: UITextField!
+    @IBOutlet weak var registroCP: UITextField!
+    @IBOutlet weak var registroCiudad: UITextField!
+    @IBOutlet weak var registroCumpleanos: UITextField!
+    
+    @IBOutlet weak var registroAltera: UILabel!
+    
     var misDatosDecodificados:[Author]=[]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        registroAltera.isHidden=true
        
     }
     
@@ -54,5 +65,47 @@ class Registrarse: UIViewController {
         }
         miTarea.resume()
     }
-
+    
+    
+   
+        @IBAction func DarAltaUsuario(_ sender: Any) {
+            
+            let mail:String
+            mail = registroMail.text!
+            
+            let contrasenaUno:String
+            contrasenaUno = registroContraena.text!
+            
+            let contrasenaDos:String
+            contrasenaDos = registrosegundaContrasena.text!
+            
+            let direccion:String
+            direccion = registroDireccion.text!
+            
+            let cp:String
+            cp = registroCP.text!
+            
+            let ciudad:String
+            ciudad = registroCiudad.text!
+            
+            let cumpleanos:String
+            cumpleanos = registroCumpleanos.text!
+            
+            if (mail == "" || contrasenaUno == "" || contrasenaDos == "" || direccion == "" || cp == "" || ciudad == "" || cumpleanos == "")
+                {
+                registroAltera.isHidden=false
+            }
+            else
+            {
+                registroAltera.isHidden=true
+            let miStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            let opcionPantalla = miStoryBoard.instantiateViewController(withIdentifier: "vistaLogin") as! Login
+            
+            opcionPantalla.modalPresentationStyle = .fullScreen
+            opcionPantalla.modalTransitionStyle = .flipHorizontal
+            
+            present(opcionPantalla, animated: true)
+        }
+    }
+    
 }
