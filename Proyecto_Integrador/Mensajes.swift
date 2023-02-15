@@ -1,16 +1,15 @@
 //
-//  YourFavoriteUsers.swift
+//  Mensajes.swift
 //  Proyecto_Integrador
 //
-//  Created by Habieru Senso on 12/2/23.
+//  Created by Habieru Senso on 13/2/23.
 //
 
 import UIKit
 
-class YourFavoriteUsers: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    
-    
+class Mensajes: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+ 
+
     @IBOutlet weak var tableView: UITableView!
     var miDiccionarioValoraciones = [String:String]()
         var miArrayValoraciones = [[String:String]]()
@@ -23,31 +22,28 @@ class YourFavoriteUsers: UIViewController, UITableViewDataSource, UITableViewDel
             }
         }
     
+    
+    var titleString: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
-        
+    
         let defaults = UserDefaults.standard
                 //datos dummy
                 if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] == nil) {
-                    miDiccionarioValoraciones["Usuario"] = "Pepe_45"
-                    miDiccionarioValoraciones["IconoUsuario"] = "Pepe_45"
+                    miDiccionarioValoraciones["Juego"] = "Last of Us"
+                    miDiccionarioValoraciones["IconoJuego"] = "lastofus"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
-                    miDiccionarioValoraciones["Usuario"] = "El_roblox"
-                    miDiccionarioValoraciones["IconoUsuario"] = "El_roblox"
+                    miDiccionarioValoraciones["Juego"] = "Hamtaro"
+                    miDiccionarioValoraciones["IconoJuego"] = "Hamtaro"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
-                    
-                    miDiccionarioValoraciones["Usuario"] = "face_ip"
-                    miDiccionarioValoraciones["IconoUsuario"] = "face_ip"
-                    
-                    miArrayValoraciones.append(miDiccionarioValoraciones)
-                    
+        
                 }
         
+        // Do any additional setup after loading the view.
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,12 +58,12 @@ class YourFavoriteUsers: UIViewController, UITableViewDataSource, UITableViewDel
 
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             
-                let miCelda = tableView.dequeueReusableCell(withIdentifier: "celdaUsuarioFavorito", for: indexPath as IndexPath) as? miCeldaUsuarioTableViewCell
+                let miCelda = tableView.dequeueReusableCell(withIdentifier: "mensajescell", for: indexPath as IndexPath) as? mensajescell
                 //cell.textLabel!.text = "\(nota[indexPath.row])"
            // var miCelda = miCeldaTableViewCell()
             let miDiccionario = miArrayValoraciones[indexPath.row]
-            miCelda?.miUsuarioFavorito.text = miDiccionario["Usuario"]
-            miCelda?.miUsuarioFavoritoImagen.image = UIImage(named:  miDiccionario["IconoUsuario"]!)
+            miCelda?.miJuegoChat.text = miDiccionario["Juego"]
+            miCelda?.miJuegoChatImagen.image = UIImage(named:  miDiccionario["IconoJuego"]!)
             return miCelda!
             }
         
@@ -76,25 +72,23 @@ class YourFavoriteUsers: UIViewController, UITableViewDataSource, UITableViewDel
         }
     
     //select
-    
+    /*
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let destination = storyboard.instantiateViewController(withIdentifier: "ShowFavoriteUserProfile") as! showUserInfo
+        let destination = storyboard.instantiateViewController(withIdentifier: "ShowProductInfoByGenreViewController") as! ShowGameInfoByGenre
         let indexPath = tableView.indexPathForSelectedRow
-        let currentCell = tableView.cellForRow(at: indexPath!)! as! miCeldaUsuarioTableViewCell
-        destination.titleString = currentCell.miUsuarioFavorito.text
+        let currentCell = tableView.cellForRow(at: indexPath!)! as! suCeldaTableViewCell
+
         navigationController?.pushViewController(destination, animated: true)
     }
-    
-    //fin select
-    
+    */
 }
 
-class miCeldaUsuarioTableViewCell: UITableViewCell {
+class mensajescell: UITableViewCell {
         
   
-    @IBOutlet weak var miUsuarioFavorito: UILabel!
-    @IBOutlet weak var miUsuarioFavoritoImagen: UIImageView!
+    @IBOutlet weak var miJuegoChat: UILabel!
+    @IBOutlet weak var miJuegoChatImagen: UIImageView!
     
         override func awakeFromNib() {
             super.awakeFromNib()

@@ -8,8 +8,8 @@
 import UIKit
 
 class showUserInfo: UIViewController, UITableViewDataSource, UITableViewDelegate  {
-    @IBOutlet weak var titleGame: UILabel!
-    @IBOutlet weak var gameImage: UIImageView!
+    @IBOutlet weak var nombreUsuario: UILabel!
+    @IBOutlet weak var fotoUsuario: UIImageView!
     
     @IBOutlet weak var tableView: UITableView!
     var miDiccionarioValoraciones = [String:String]()
@@ -28,21 +28,21 @@ class showUserInfo: UIViewController, UITableViewDataSource, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gameImage.image = UIImage(named: "Pepe_45")
-        titleGame.text! = titleString
-        titleGame.textAlignment = .center
+        fotoUsuario.image = UIImage(named: "Pepe_45")
+        nombreUsuario.text! = titleString
+        nombreUsuario.textAlignment = .center
         
         
         let defaults = UserDefaults.standard
                 //datos dummy
                 if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] == nil) {
-                    miDiccionarioValoraciones["Genero"] = "Last of Us"
-                    miDiccionarioValoraciones["IconoGenero"] = "lastofus"
+                    miDiccionarioValoraciones["Juego"] = "Last of Us"
+                    miDiccionarioValoraciones["IconoJuego"] = "lastofus"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
-                    miDiccionarioValoraciones["Genero"] = "Hamtaro"
-                    miDiccionarioValoraciones["IconoGenero"] = "Hamtaro"
+                    miDiccionarioValoraciones["Juego"] = "Hamtaro"
+                    miDiccionarioValoraciones["IconoJuego"] = "Hamtaro"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
         
@@ -67,8 +67,8 @@ class showUserInfo: UIViewController, UITableViewDataSource, UITableViewDelegate
                 //cell.textLabel!.text = "\(nota[indexPath.row])"
            // var miCelda = miCeldaTableViewCell()
             let miDiccionario = miArrayValoraciones[indexPath.row]
-            miCelda?.miGenero.text = miDiccionario["Genero"]
-            miCelda?.miGeneroImagen.image = UIImage(named:  miDiccionario["IconoGenero"]!)
+            miCelda?.suJuego.text = miDiccionario["Juego"]
+            miCelda?.suJuegoImagen.image = UIImage(named:  miDiccionario["IconoJuego"]!)
             return miCelda!
             }
         
@@ -92,8 +92,8 @@ class showUserInfo: UIViewController, UITableViewDataSource, UITableViewDelegate
 class suCeldaTableViewCell: UITableViewCell {
         
   
-    @IBOutlet weak var miGenero: UILabel!
-    @IBOutlet weak var miGeneroImagen: UIImageView!
+    @IBOutlet weak var suJuego: UILabel!
+    @IBOutlet weak var suJuegoImagen: UIImageView!
     
         override func awakeFromNib() {
             super.awakeFromNib()

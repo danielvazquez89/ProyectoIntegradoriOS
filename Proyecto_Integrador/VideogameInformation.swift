@@ -20,9 +20,7 @@ class VideogameInformation: UIViewController {
         titleGame.text! = titleString
         titleGame.textAlignment = .center
         
-     
-        
-        // Do any additional setup after loading the view.
     }
+    
     
 }

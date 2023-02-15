@@ -9,8 +9,10 @@
 import UIKit
 
 class TableViewControllerCategorias: UITableViewController {
+    
     var miDiccionarioValoraciones = [String:String]()
     var miArrayValoraciones = [[String:String]]()
+    
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] != nil) {

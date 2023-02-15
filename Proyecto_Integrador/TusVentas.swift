@@ -29,13 +29,13 @@ class TusVentas: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let defaults = UserDefaults.standard
                 //datos dummy
                 if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] == nil) {
-                    miDiccionarioValoraciones["Genero"] = "Hamtaro"
-                    miDiccionarioValoraciones["IconoGenero"] = "Hamtaro"
+                    miDiccionarioValoraciones["Juego"] = "Hamtaro"
+                    miDiccionarioValoraciones["IconoJuego"] = "Hamtaro"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
-                    miDiccionarioValoraciones["Genero"] = "Pokemon Monstrupo"
-                    miDiccionarioValoraciones["IconoGenero"] = "Pokemon_Monstrupo"
+                    miDiccionarioValoraciones["Juego"] = "Pokemon Monstrupo"
+                    miDiccionarioValoraciones["IconoJuego"] = "Pokemon_Monstrupo"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
@@ -59,8 +59,8 @@ class TusVentas: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 //cell.textLabel!.text = "\(nota[indexPath.row])"
            // var miCelda = miCeldaTableViewCell()
             let miDiccionario = miArrayValoraciones[indexPath.row]
-            miCelda?.miGenero.text = miDiccionario["Genero"]
-            miCelda?.miGeneroImagen.image = UIImage(named:  miDiccionario["IconoGenero"]!)
+            miCelda?.miJuegoVenta.text = miDiccionario["Juego"]
+            miCelda?.miJuegoVentaImagen.image = UIImage(named:  miDiccionario["IconoJuego"]!)
             return miCelda!
             }
         
@@ -77,8 +77,8 @@ class TusVentas: UIViewController, UITableViewDataSource, UITableViewDelegate {
 class miCeldaVentasTableViewCell: UITableViewCell {
         
   
-    @IBOutlet weak var miGenero: UILabel!
-    @IBOutlet weak var miGeneroImagen: UIImageView!
+    @IBOutlet weak var miJuegoVenta: UILabel!
+    @IBOutlet weak var miJuegoVentaImagen: UIImageView!
     
         override func awakeFromNib() {
             super.awakeFromNib()

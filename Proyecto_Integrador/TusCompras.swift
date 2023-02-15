@@ -31,18 +31,18 @@ class TusCompras: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let defaults = UserDefaults.standard
                 //datos dummy
                 if (defaults.object(forKey: "miArrayDiccionario") as? [[String:String]] == nil) {
-                    miDiccionarioValoraciones["Genero"] = "Last of us"
-                    miDiccionarioValoraciones["IconoGenero"] = "lastofus"
+                    miDiccionarioValoraciones["Juego"] = "Last of us"
+                    miDiccionarioValoraciones["IconoJuego"] = "lastofus"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
-                    miDiccionarioValoraciones["Genero"] = "Mortadelo"
-                    miDiccionarioValoraciones["IconoGenero"] = "Mortadelo"
+                    miDiccionarioValoraciones["Juego"] = "Mortadelo"
+                    miDiccionarioValoraciones["IconoJuego"] = "Mortadelo"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
-                    miDiccionarioValoraciones["Genero"] = "Nintendogs"
-                    miDiccionarioValoraciones["IconoGenero"] = "Nintendogs"
+                    miDiccionarioValoraciones["Juego"] = "Nintendogs"
+                    miDiccionarioValoraciones["IconoJuego"] = "Nintendogs"
                     
                     miArrayValoraciones.append(miDiccionarioValoraciones)
                     
@@ -66,8 +66,8 @@ class TusCompras: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 //cell.textLabel!.text = "\(nota[indexPath.row])"
            // var miCelda = miCeldaTableViewCell()
             let miDiccionario = miArrayValoraciones[indexPath.row]
-            miCelda?.miGenero.text = miDiccionario["Genero"]
-            miCelda?.miGeneroImagen.image = UIImage(named:  miDiccionario["IconoGenero"]!)
+            miCelda?.miJuegoCompra.text = miDiccionario["Juego"]
+            miCelda?.miImagenJuegoCompra.image = UIImage(named:  miDiccionario["IconoJuego"]!)
             return miCelda!
             }
         
@@ -84,8 +84,8 @@ class TusCompras: UIViewController, UITableViewDataSource, UITableViewDelegate {
 class miCeldaComprasTableViewCell: UITableViewCell {
         
   
-    @IBOutlet weak var miGenero: UILabel!
-    @IBOutlet weak var miGeneroImagen: UIImageView!
+    @IBOutlet weak var miJuegoCompra: UILabel!
+    @IBOutlet weak var miImagenJuegoCompra: UIImageView!
     
         override func awakeFromNib() {
             super.awakeFromNib()

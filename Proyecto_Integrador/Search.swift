@@ -20,6 +20,8 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
     var filteredData = [String]()
     var filtered = false
     
+    var misDatosDecodificados:[TodosJuegos]=[]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +32,8 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
         table.delegate = self
         table.dataSource = self
         field.delegate  = self
+        
+        loadDataFromRemote()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -106,6 +110,33 @@ class Search: UIViewController,UITableViewDelegate,UITableViewDataSource, UIText
     @IBAction func awayFromYou(_ sender: Any) {
         variable.text = "\(Int(distanceFromYou.value))" + " €"
     }
+    
+    func loadDataFromRemote()
+    {
+        //accedemos a un JSON remoto
+        guard let miUrl = URL(string: "http://localhost:8080/juegos/") else
+        {
+            print("No se encuentra el archivo JSON Remoto")
+            return
+        }
+        
+        decodeJSON(url: miUrl)
+    }
+    
+    func decodeJSON(url: URL)
+    {
+        do{
+            let miDecodificador = JSONDecoder()
+            let misDatos = try Data(contentsOf: url)
+            self.misDatosDecodificados = try miDecodificador.decode([TodosJuegos].self, from: misDatos)
+            print("decodificado ")
+        }
+        catch
+        {
+            print("Error al decodificar... INUTIL")
+        }
+    }
+    
 }
 
 class searchCell: UITableViewCell {
